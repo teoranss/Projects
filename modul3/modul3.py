@@ -133,7 +133,6 @@ print("**********************E4*********************")
 tuple1= (1, 'a', ('b', 1+1j))
 
 def find_complex(tuple1):
-    for var in tuple1:
         for var in tuple1:
             print('am un numar: ', var)
             if isinstance(var, complex):
