@@ -3,12 +3,18 @@ Module for saving car series
 """
 class CarFactory():
     """
+                         Doc Class
     Class for creating car series and lots
     """
     serii = []
     loturi = []
 
-    def __init__(self, serie_start, numar_bucati) -> int:
+    def __init__(self, serie_start:int, numar_bucati:int) -> int:
+        """
+        :param serie_start
+        :param numar_bucati
+
+        """
         self.serie_start = serie_start
         self.numar_bucati = numar_bucati
         self.__calcul_serii()
@@ -25,6 +31,10 @@ class CarFactory():
         self.loturi = list(range(lot_start, lot_stop + 1))
 
     def serii_stanga(self):
+        """
+
+        :return: series number for left wheeler
+        """
         lista_serii_stanga = []
         for i in self.serii:
             if i % 2:
@@ -32,6 +42,10 @@ class CarFactory():
         return lista_serii_stanga
 
     def serii_dreapta(self):
+        """
+
+        :return: series number for right wheeler
+        """
         lista_serii_dreapta = []
         for i in self.serii:
             if not i % 2:
@@ -58,9 +72,9 @@ class CarFactoryIterator():
 
 car_factory = CarFactory(314, 90)
 
-with open("Serii.txt", mode='x') as file:
-    for car in car_factory:
-        file.write(str(car) + '\n')
+# with open("Serii.txt", mode='x') as file:
+#     for car in car_factory:
+#         file.write(str(car) + '\n')
 
 # print(car_factory.serii)
 # print(len(car_factory.serii))
