@@ -195,3 +195,136 @@ class Prime():
 
 var4 = Prime(128, 256)
 print(next(var4))
+
+print("==============Files================")
+
+stream1 = open('C:/Users/admin/PycharmProjects/Projects/modul6/text.txt', mode='rb')
+print(type(stream1))
+new_read1 = stream1.read()
+print(type(new_read1))
+print(new_read1)
+stream1.close()
+
+stream2 = open('C:/Users/admin/PycharmProjects/Projects/modul6/text.txt', mode='rt')
+print(type(stream2))
+new_read2 = stream2.read()
+print(type(new_read2))
+print(new_read2)
+stream2.close()
+
+stream3 = open('text.txt', mode='wt')
+stream3.write('New Text')
+print(type(stream3))
+stream3.close()
+print("==============E1================")
+
+with open('text.txt', mode='r') as stream4:
+    print(stream4.read())
+
+# stream4.__enter__()
+# stream4.__exit__()
+
+import time
+
+
+class Context():
+    def __init__(self):
+        print('in constructor')
+        time.sleep(1)
+        # self.sleep = 1
+
+    def __enter__(self):
+        print('Before create')
+        time.sleep(1)
+        # self.sleep = 10
+        return self
+
+    def do_some_work(self):
+        print('working')
+        # time.sleep(self.sleep)
+
+    def __exit__(self, type, value, traceback):
+        print(traceback)
+        print('after end')
+        # time.sleep(1)
+
+
+# con = Context()
+# with con as context:
+#     context.do_some_work()
+#     raise Exception('some error')
+
+
+print("==============byte================")
+
+var1 = b'My text'
+print(type(var1))
+var2 = var1.decode()
+print(type(var2))
+var3 = var2.encode()
+print(type(var3))
+
+print("==============Map Function===============")
+a = [1, 2, 3]
+
+map_obj = map(lambda x: x + 1, a)
+print(type(map_obj))
+for i in map_obj:
+    print(i)
+
+a = [1, 2, 3]
+b = [3, 3, 3]
+
+map_obj = map(lambda x, y: x + y + 1, a, b)
+print(type(map_obj))
+for i in map_obj:
+    print(i)
+
+animal = ['rabbit', 'tiger', 'human']
+mappped_animal = map(lambda s: s if 'g' in s else None, animal)
+for i in mappped_animal:
+    print(i)
+
+print("============== Filters ===============")
+
+filtered_animals = filter(lambda s: s if 'g' in s else None, animal)
+for i in filtered_animals:
+    print(i)
+
+print("============== Special Filters ===============")
+print("============== All (and) ===============")
+print(all([0, 1, 2, 3]))
+
+
+def my_all(my_iter):
+    def my_filter_function(elem):
+        return bool(elem)
+
+    for element in my_iter:
+        if my_filter_function(element):
+            continue
+        return False
+    else:
+        return True
+
+
+print(my_all([0, 1, 2, 3]))
+print("============== Any (or) ===============")
+
+print(any([0, 0, 0, 0]))
+
+
+def my_any(my_iter2):
+    def my_filter_function1(v):
+        return bool(v)
+
+    for j in my_iter2:
+        if not my_filter_function1(j):
+            return True
+    else:
+        return False
+
+
+print(my_any([0, 0, 0, 0]))
+
+print("============== Modul 6/curs final ===============")
