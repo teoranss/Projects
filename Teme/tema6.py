@@ -57,7 +57,9 @@ class CarFactory():
 
 
 class CarFactoryIterator():
-
+    """
+    Class for iterating next
+    """
     def __init__(self, serii):
         self.serii = serii
 
@@ -72,12 +74,12 @@ class CarFactoryIterator():
 
 car_factory = CarFactory(314, 90)
 
-# with open("Serii.txt", mode='x') as file:
-#     for car in car_factory:
-#         file.write(str(car) + '\n')
+with open("Serii.txt", mode='x') as file:
+    for car in car_factory:
+        file.write(str(car) + '\n')
 
-# print(car_factory.serii)
-# print(len(car_factory.serii))
-# print(car_factory.loturi)
-# print(car_factory.serii_stanga())
-# print(car_factory.serii_dreapta())
+print(car_factory.serii)
+print(len(car_factory.serii))
+print(car_factory.loturi)
+print(car_factory.serii_stanga())
+print(car_factory.serii_dreapta())

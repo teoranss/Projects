@@ -20,12 +20,12 @@ class Triunghi():
             raise AttributeError("Valoarea nu este in range!")
         else:
 
-            if unghi == my_tri.a:
+            if unghi == self.a:
                 self.a = self.a + modificare
                 self.b = self.b - modificare / 2
                 self.c = self.c - modificare / 2
 
-            elif unghi == my_tri.b:
+            elif unghi == self.b:
                 self.b = self.b + modificare
                 self.a = self.a - modificare / 2
                 self.c = self.c - modificare / 2

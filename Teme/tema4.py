@@ -3,14 +3,19 @@
 # returnate in intervalul -10, 10. Printati valoarea lui x pentru care functiia returneaza un minim
 
 
-def calcul(a,b,c):
+def calcul(a, b, c):
     min = 9999
 
-    for x in range (-10,11):
-        rez = a * (x**2) - 2*b*x +c
+    for x in range(-10, 11):
+        rez = a * (x ** 2) - 2 * b * x + c
         if min > rez:
             min = rez
             val_x = x
     return val_x
 
-print(calcul(1,3,5))
+
+def returnare(a, b, c):
+    return calcul(a, b, c)
+
+
+print(returnare(1, 3, 5))
